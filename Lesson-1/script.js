@@ -15,8 +15,8 @@ let money = +prompt("Ваш бюджет на месяц?"),
       income: [],
       savings: false
     };
-appData.expenses[answer1] = [answer2];
-appData.expenses[answer3] = [answer4];
-oneDay = (money - answer2 - answer4) / 30;
+appData.expenses[answer1] = answer2;
+appData.expenses[answer3] = answer4;
+oneDay = (money - +appData.expenses[answer1] - +appData.expenses[answer3]) / 30;
 alert("Ваш бюджет на 1 день - " + oneDay);
 console.log(appData);
