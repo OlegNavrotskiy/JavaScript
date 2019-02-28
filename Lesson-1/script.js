@@ -1,21 +1,22 @@
 'use strict';
 
-let groupFirst = {
-  money: +prompt("Ваш бюджет на месяц?"),
-  time: prompt("Введите дату в формате YYYY-MM-DD"),
-  },
-  oneDay,
-  appData = {
-    budget: groupFirst.money,
-    timeData: groupFirst.time,
-    expenses: {
-      answerFirst: prompt("Введите обязательную статью расходов в этом месяце"),
-      answerSecond: +prompt("Во сколько обойдется?"),
-    },
-    optionalExpenses: '',
-    income: [],
-    savings: false
-  };
-oneDay = (groupFirst.money - appData.expenses.answerSecond) / 30;
+let money = +prompt("Ваш бюджет на месяц?"),
+    time =  prompt("Введите дату в формате YYYY-MM-DD"),
+    oneDay,
+    answer1 = prompt("Введите обязательную статью расходов в этом месяце"),
+    answer2 = +prompt("Во сколько обойдется?"),
+    answer3 = prompt("Введите обязательную статью расходов в этом месяце"),
+    answer4 = +prompt("Во сколько обойдется?"),
+    appData = {
+      budget: money,
+      timeData: time,
+      expenses: {},
+      optionalExpenses: '',
+      income: [],
+      savings: false
+    };
+appData.expenses[answer1] = [answer2];
+appData.expenses[answer3] = [answer4];
+oneDay = (money - answer2 - answer4) / 30;
 alert("Ваш бюджет на 1 день - " + oneDay);
 console.log(appData);
