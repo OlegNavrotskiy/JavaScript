@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 'use strict';
 
 const num = 33721;
@@ -13,23 +12,3 @@ finish = String(cube);
 console.log(multiplication);
 console.log(cube);
 alert(finish[0] + finish[1]);
-
-
-=======
-'use strict';
-
-const num = 33721;
-let multiplication,
-  multiplicationStr,
-  cube,
-  finish;
-multiplicationStr = String(num);
-multiplication = +multiplicationStr[0] * +multiplicationStr[1] * +multiplicationStr[2] * +multiplicationStr[3] * +multiplicationStr[4];
-cube = multiplication ** 3;
-finish = String(cube);
-console.log(multiplication);
-console.log(cube);
-alert(finish[0] + finish[1]);
-
-
->>>>>>> a696edc889eca43b274c9c49733b5830097d9d0b
