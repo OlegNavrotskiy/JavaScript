@@ -1,53 +1,21 @@
 'use strict';
 
-let friendlyNums = [];
+let arr = [[220, 284],[220, 284], [1184, 1210]];
 
-function getFriendlyNumbers(start, end) {
-  if (
-    typeof start == "number" &&
-    typeof end == "number" &&
-    1 <= start && start <= end &&
-    parseInt(start) == start &&
-    parseInt(end) == end ) {
-      for (let i = start; i <= end; i++) {
-        for (let j = start; j <= i; j++) {
-          if (
-            getDivisorsSum(j) === i &&
-            getDivisorsSum(j) !== j &&
-            getDivisorsSum(i) === j &&
-            getDivisorsSum(i) !== i &&
-            getDivisorsSum(i) > start) 
-            {
-              friendlyNums.push([i, j].sort());
-            }
-          }
-        }
+function working (strings) {
+
+  for (let i=0; i<strings.length; i++) {
+    for (let k = i+1; k < strings.length; k++) {
+      if (strings[i].join() == strings[k].join()) {
+        strings.slice(i);
+        console.log(strings);
       } else {
-        return false;
+        console.log("Одинаковых элементов нет");
       }
-      console.log(friendlyNums);
-      return friendlyNums;
-    }
-getFriendlyNumbers(300, 500);
-
-
-function getDivisors(num) {
-  let arrDivisors = [];
-  for (let i = 1; i < num; i++) {
-    if (num % i == 0) {
-      arrDivisors.push(i);
     }
   }
-  return arrDivisors;
 }
+working(arr);
 
-function getSum(arr) {
-  let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
-  return sum;
-}
-function getDivisorsSum(num) {
-  return getSum(getDivisors(num));
-}
+
+

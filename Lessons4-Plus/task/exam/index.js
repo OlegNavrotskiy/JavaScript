@@ -1,7 +1,6 @@
-let friendlyNums = [];
-
 function getFriendlyNumbers(start, end) {
 // Проверка на правильность ввода аргументов функции
+let friendlyNums = [];
   if (
     typeof start == "number" &&
     typeof end == "number" &&
@@ -20,7 +19,7 @@ function getFriendlyNumbers(start, end) {
             getDivisorsSum(i) > start) 
             {
 //Записываем массив с элементами в массив дружественных чисел
-              friendlyNums.push([i, j].sort());
+            friendlyNums.push([i, j].sort());
             }
           }
         }
@@ -33,7 +32,11 @@ function getFriendlyNumbers(start, end) {
       return friendlyNums;
     }
 //Проверка на работоспособность
-//    getFriendlyNumbers(1, 1210);
+getFriendlyNumbers(1, 1);
+
+
+
+
 
 //Массив делителей
 function getDivisors(num) {
