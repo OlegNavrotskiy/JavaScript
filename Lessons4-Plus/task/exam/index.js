@@ -1,6 +1,7 @@
 function getFriendlyNumbers(start, end) {
-// Проверка на правильность ввода аргументов функции
+
 let friendlyNums = [];
+// Проверка на правильность ввода аргументов функции
   if (
     typeof start == "number" &&
     typeof end == "number" &&
@@ -33,10 +34,6 @@ let friendlyNums = [];
     }
 //Проверка на работоспособность
 getFriendlyNumbers(1, 1);
-
-
-
-
 
 //Массив делителей
 function getDivisors(num) {
