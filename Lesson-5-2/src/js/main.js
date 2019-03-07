@@ -8,8 +8,9 @@ let startButton = document.getElementById('start'),
     monthsavings = document.getElementsByClassName('monthsavings-value'),
     yearsavings = document.getElementsByClassName('yearsavings-value'),
     expensesItem = document.getElementsByClassName('expenses-item'),
-    approve = document.getElementsByTagName('button')[1],
-    calculate = document.getElementsByTagName('button')[3],
+    approve1 = document.getElementsByTagName('button')[0],    
+    approve2 = document.getElementsByTagName('button')[1],
+    calculate = document.getElementsByTagName('button')[2],
     optionalexpensesInput = document.querySelectorAll('.optionalexpenses-item'),
     choose = document.querySelector('#income'),
     checkbox = document.querySelector('#savings'), 
@@ -29,7 +30,8 @@ console.log(income);
 console.log(monthsavings);
 console.log(yearsavings);
 console.log(expensesItem);
-console.log(approve);
+console.log(approve1);
+console.log(approve2);
 console.log(calculate);
 console.log(optionalexpensesInput);
 console.log(choose);
