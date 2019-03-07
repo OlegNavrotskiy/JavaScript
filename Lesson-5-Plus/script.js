@@ -11,7 +11,8 @@ let dataNow = new Date(),
     result = document.querySelector("#result");
 
 function showData(dataNow) {
-  let timeBtn = document.querySelector("#timeNow"),
+//Первый плохой способ
+/*   let timeBtn = document.querySelector("#timeNow"),
       str = "";
   hours = dataNow.getHours().toString();
   minutes = dataNow.getMinutes().toString();
@@ -38,6 +39,11 @@ function showData(dataNow) {
   }
   str = hours + ":" + minutes + ":" + second + "    " + date + "." + month + "." + year;
   timeBtn.value = str;
+ */
+//Второй способ
+let timeBtn = document.querySelector("#timeNow"),
+    today = new Date().toLocaleString();
+timeBtn.value = today;
 }
 showData(dataNow);
 
@@ -66,10 +72,11 @@ function numDay(dataNow) {
       oneDay = 24 * 60 * 60 * 1000, //количество миллисекунд за 24 часа
       numDay = 0;
 
+  startDate = new Date(startDate).toLocaleString();
+  endData = new Date(endData).toLocaleString();
   startDate = new Date(startDate); //Создает объект Date, значение которого равно количеству миллисекунд
   endData = new Date(endData); //Создает объект Date, значение которого равно количеству миллисекунд
-
-  numDay = (endData - startDate) / oneDay; 
+  numDay = Math.floor((endData - startDate) / oneDay); 
 
   result.value = numDay;
 }
