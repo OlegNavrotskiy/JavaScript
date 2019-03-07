@@ -8,12 +8,12 @@ let dataNow = new Date(),
     date = dataNow.getDate(),
     month = dataNow.getMonth(),
     year = dataNow.getFullYear(),
+    timeBtn = document.querySelector("#timeNow"),
+    str,
     result = document.querySelector("#result");
 
-function showData(dataNow) {
-//Первый плохой способ
-/*   let timeBtn = document.querySelector("#timeNow"),
-      str = "";
+function showData(arg) {
+//Первый способ
   hours = dataNow.getHours().toString();
   minutes = dataNow.getMinutes().toString();
   second = dataNow.getSeconds().toString();
@@ -22,29 +22,21 @@ function showData(dataNow) {
   month = dataNow.getMonth().toString();
   year = dataNow.getFullYear();
 
-  if (hours.length < 2) {
-    hours = "0" + hours;
-  }
-  if (minutes.length < 2) {
-    minutes = "0" + minutes;
-  }
-  if (second.length < 2) {
-    second = "0" + second;
-  }
-  if (date.length < 2) {
-    date = "0" + date;
-  }
-  if (month.length < 2) {
-    month = "0" + month;
-  }
-  str = hours + ":" + minutes + ":" + second + "    " + date + "." + month + "." + year;
-  timeBtn.value = str;
- */
-//Второй способ
-let timeBtn = document.querySelector("#timeNow"),
-    today = new Date().toLocaleString();
-timeBtn.value = today;
+  if (arg.length < 2) {
+    arg = "0" + arg;
+  } return arg;
 }
+
+
+  str = showData(hours) + ":" + showData(minutes) + ":" + showData(second) +
+   "    " + showData(date) + "." + showData(month) + "." + year;
+  timeBtn.value = str;
+
+//Второй способ
+/* let timeBtn = document.querySelector("#timeNow"),
+    today = new Date().toLocaleString();
+timeBtn.value = today; */
+
 showData(dataNow);
 
 function dayWeek(day) {
@@ -68,15 +60,13 @@ dayWeek(day);
 
 function numDay(dataNow) {
   let startDate = document.body.querySelector("#start").value,
-      endData = document.body.querySelector("#end").value,
+      endDate = document.body.querySelector("#end").value,
       oneDay = 24 * 60 * 60 * 1000, //количество миллисекунд за 24 часа
       numDay = 0;
 
-  startDate = new Date(startDate).toLocaleString();
-  endData = new Date(endData).toLocaleString();
   startDate = new Date(startDate); //Создает объект Date, значение которого равно количеству миллисекунд
-  endData = new Date(endData); //Создает объект Date, значение которого равно количеству миллисекунд
-  numDay = Math.floor((endData - startDate) / oneDay); 
+  endDate = new Date(endDate); //Создает объект Date, значение которого равно количеству миллисекунд
+  numDay = Math.floor((endDate - startDate) / oneDay); 
 
   result.value = numDay;
 }
