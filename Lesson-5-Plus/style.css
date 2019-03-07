@@ -1,0 +1,25 @@
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1140px;
+  margin: auto;
+}
+.timeNow {
+  min-width: 424px;
+  text-align: center;
+}
+.timeNow input {
+  text-align: center;
+}
+.date {
+  display: flex;
+}
+input, button, h2 {
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 5px;
+  min-width: 200px;
+}
