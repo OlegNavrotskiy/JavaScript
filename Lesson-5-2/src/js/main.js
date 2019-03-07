@@ -8,16 +8,16 @@ let startButton = document.getElementById('start'),
     monthsavings = document.getElementsByClassName('monthsavings-value'),
     yearsavings = document.getElementsByClassName('yearsavings-value'),
     expensesItem = document.getElementsByClassName('expenses-item'),
-    approve = document.getElementsByTagName('button'),
-    calculate = document.getElementsByTagName('button'),
-    optionalexpensesInput = document.querySelectorAll('optionalexpenses-item'),
-    choose = document.querySelector('.choose-income'),
-    checkbox = document.querySelector('#savings'),
+    approve = document.getElementsByTagName('button')[1],
+    calculate = document.getElementsByTagName('button')[3],
+    optionalexpensesInput = document.querySelectorAll('.optionalexpenses-item'),
+    choose = document.querySelector('#income'),
+    checkbox = document.querySelector('#savings'), 
     sum = document.querySelector('#sum'),
     percent = document.querySelector('#percent'),
-    year = document.querySelectorAll('.year-value'),
-    month = document.querySelectorAll('.month-value'),
-    day = document.querySelectorAll('.day-value');
+    year = document.querySelector('.year-value'),
+    month = document.querySelector('.month-value'),
+    day = document.querySelector('.day-value');
 
 console.log(startButton);
 console.log(budget);

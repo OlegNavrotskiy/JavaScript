@@ -12,7 +12,7 @@ menu.appendChild(menuItem); //создали останний пункт мен�
 menuItem.classList.add('menu-item'); //добавили класс
 menuItem.textContent = 'Пятый пункт'; //добавили текст в класс
 
-document.body.style.background = ('url(../img/apple_true.jpg) center no-repeat'); //изменили задний фон
+document.body.style.background = 'url(img/apple_true.jpg) center no-repeat'; //изменили задний фон
 
 title.textContent = 'Мы продаем только подлинную технику Apple'; //изменили заголовок
 
