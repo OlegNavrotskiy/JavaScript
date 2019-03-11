@@ -9,25 +9,25 @@ let dataNow = new Date(),
     month = dataNow.getMonth(),
     year = dataNow.getFullYear(),
     timeBtn = document.querySelector("#timeNow"),
-    str,
+    str, num,
     result = document.querySelector("#result");
+
+dataNow.setMonth(dataNow.getMonth() + 1);
+
+hours = dataNow.getHours().toString();
+minutes = dataNow.getMinutes().toString();
+second = dataNow.getSeconds().toString();
+day = dataNow.getDay().toString();
+date = dataNow.getDate().toString();
+month = dataNow.getMonth().toString();
+year = dataNow.getFullYear();
 
 function showData(arg) {
 //Первый способ
-  hours = dataNow.getHours().toString();
-  minutes = dataNow.getMinutes().toString();
-  second = dataNow.getSeconds().toString();
-  day = dataNow.getDay().toString();
-  date = dataNow.getDate().toString();
-  month = dataNow.getMonth().toString();
-  year = dataNow.getFullYear();
-
   if (arg.length < 2) {
     arg = "0" + arg;
   } return arg;
 }
-
-
   str = showData(hours) + ":" + showData(minutes) + ":" + showData(second) +
    "    " + showData(date) + "." + showData(month) + "." + year;
   timeBtn.value = str;
