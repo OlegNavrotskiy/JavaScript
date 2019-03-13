@@ -34,13 +34,15 @@
       });
 
 // Timer
-let deadline = '2019-03-15';
+let deadline = '2019-03-14:00:00';
+
 
 function getTimeRemaining(endtime) {
+ 
   let t = Date.parse(endtime) - Date.parse(new Date()),
       seconds = Math.floor((t / 1000) % 60).toString(),
       minutes = Math.floor((t / 1000 / 60) % 60).toString(),
-      hours = Math.floor((t / (1000 * 60 * 60))).toString();
+      hours = Math.floor((t / 1000 / 60 / 60) % 24).toString();
 
     if (seconds.length < 2) {
       seconds = "0" + seconds;
