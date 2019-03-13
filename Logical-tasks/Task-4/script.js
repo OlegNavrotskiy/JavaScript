@@ -1,30 +1,20 @@
-/* func([2,3,2,4,5,12,2,3,3,3,12])
-результат -> [3,3,3,3,2,2,2,12,12,4,5]
-[12, 12, 2, 2, 2, 3, 3, 3, 3, 4, 5] */
+//func("ACGTGGTCTTAA");
+// результат =>>> "UGCACCAGAAUU"
 
-let arr = [2,3,2,4,5,12,2,3,3,3,12],
-    arr2 =[],
-    arr3 =[],
-    result = {};
-arr.forEach(function(a){
-    if (result[a] != undefined) {
-      ++result[a];
-    }
-    else {
-      result[a] = 1;
-    }
-});
-for (let key in result) {
-  arr2.push(result[key] + key);
-}
-arr2.sort();
-console.log(arr2.sort());
+// G -> C, C -> G, T -> A, A -> U.
 
-console.log(arr2[0].charAt(0));
-function newArr(a,b) {
-  for (let i=0; i < b; i++) {
-    arr3.push(arr[a].chart(1));
-  }
+let arr = "ACGTGGTCTTAA";
+
+function dnk(arr) {
+let a, t, c, g, x;
+
+a = arr.replace(/A/g, 'U');
+t = a.replace(/T/g, 'A');
+g = t.replace(/G/g, 'X');
+c = g.replace(/C/g, 'G');
+x = c.replace(/X/g, 'C');
+
+console.log("ДНК: " + arr);
+console.log("РНК: " + x);
 }
-newArr(0,arr2[0].charAt(0));
-console.log(arr3);
+dnk(arr);
