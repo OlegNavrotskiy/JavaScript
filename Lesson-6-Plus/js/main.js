@@ -69,23 +69,15 @@ for (let i = 0; i < 3; i++) {
 });
 
 for (let i = 1; i < expensesItem.length; i = i+2) {
-  expensesItem[i].addEventListener('keyup', function () {
-      let x = expensesItem[i].value.charCodeAt(0);
-      if (x > 47 && x < 58) {
-        console.log("Ура");
-      } else {
-        alert('Только цифры!');
-      }
-  });
+  expensesItem[i].onkeyup = function(e) {
+    expensesItem[i].value = expensesItem[i].value.replace(/[^0-9]/ig,'');
+  };
 }
 
 for (let i = 0; i < optionalExpensesItem.length; i++) {
-  optionalExpensesItem[i].addEventListener('keyup', function () {
-      let x = optionalExpensesItem[i].value.charCodeAt(0);
-      if (x < 122) {
-          alert('Только русские слова!');
-      }
-  });
+  optionalExpensesItem[i].onkeyup = function(e) {
+    optionalExpensesItem[i].value = optionalExpensesItem[i].value.replace(/[^^а-яё]/ig,'');
+  };
 }
 
 

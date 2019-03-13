@@ -1,12 +1,15 @@
 'use strict';
-//делаем метку
-myNumber: 
-  for (var i = 2; i <= 100; i++) {
 
-    for (var j = 2; j < i; j++) {
-//Если число делится без остатка на еще какое-то, пореходим до метки
-      if (i % j == 0) continue myNumber;
-    }
-//Выводим по одному натуральному числу
-    console.log(i + " - делители этого числа: 1 и " + i);
-  }
+
+function testKey(e)
+{
+  // Make sure to use event.charCode if available
+  var key = (typeof e.charCode == 'undefined' ? e.keyCode : e.charCode);
+
+  // Ignore special keys
+  if (e.ctrlKey || e.altKey || key < 32)
+    return true;
+
+  key = String.fromCharCode(key);
+  return /\w/.test(key);
+}
