@@ -85,4 +85,30 @@ function setClock(id, endtime) {
 }
 setClock('timer', deadline);
 
+//Якорь
+
+let aboutBtn = document.querySelector('.menu-about');
+
+aboutBtn.onclick = function() {
+  animate(function(timePassed) {
+    let k = timePassed / (1000 / 650);
+    window.scrollTo(0, k);
+
+  }, 1000);
+};
+
+function animate(draw, duration) {
+  var start = performance.now();
+  requestAnimationFrame(function animate(time) {
+    var timePassed = time - start;
+    if (timePassed > duration) {
+      timePassed = duration;
+    }
+    draw(timePassed);
+    if (timePassed < duration) {
+      requestAnimationFrame(animate);
+    }
+  });
+}
+
 }); //конец DOMContentLoaded
