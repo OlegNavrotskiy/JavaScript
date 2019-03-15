@@ -87,28 +87,40 @@ setClock('timer', deadline);
 
 //Якорь
 
-let aboutBtn = document.querySelector('.menu-about');
-
-aboutBtn.onclick = function() {
-  animate(function(timePassed) {
-    let k = timePassed / (1000 / 650);
-    window.scrollTo(0, k);
-
-  }, 1000);
-};
-
-function animate(draw, duration) {
-  var start = performance.now();
-  requestAnimationFrame(function animate(time) {
-    var timePassed = time - start;
-    if (timePassed > duration) {
-      timePassed = duration;
-    }
-    draw(timePassed);
-    if (timePassed < duration) {
-      requestAnimationFrame(animate);
-    }
-  });
+function anim(duration) {
+  let temp;
+  return function(sel) {
+      cancelAnimationFrame(temp);
+      let start = performance.now();
+      let from = window.pageYOffset || document.documentElement.scrollTop,
+      to = document.querySelector(sel).getBoundingClientRect().top;
+      requestAnimationFrame(function step(timestamp) {
+        let progress = (timestamp - start) / duration;
+          1 <= progress && (progress = 1);
+          window.scrollTo(0, from + to * progress | 0);
+          1 > progress && (temp = requestAnimationFrame(step));
+      });
+  };
 }
+
+let scrollMenu = anim(1000);
+
+let aboutBtn = document.querySelector('.menu-about'),
+    productsBtn = document.querySelector('.menu-photo'),
+    priceBtn = document.querySelector('.menu-price'),
+    pontactsBtn = document.querySelector('.menu-contacts');
+
+    aboutBtn.addEventListener('click', function() {
+      scrollMenu('#about');
+    });
+    productsBtn.addEventListener('click', function() {
+      scrollMenu('#photo');
+    });
+    priceBtn.addEventListener('click', function() {
+      scrollMenu('#price');
+    });
+    pontactsBtn.addEventListener('click', function() {
+      scrollMenu('#contacts');
+    });
 
 }); //конец DOMContentLoaded

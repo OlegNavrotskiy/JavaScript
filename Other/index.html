@@ -1,53 +1,65 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+
+ 
+
 <html>
 
 <head>
+
+  <title>Untitled</title>
+
+  <meta charset="utf-8">
+
   <style>
-    #train {
-      position: relative;
-      cursor: pointer;
-    }
-  </style>
+
+html, body {
+
+ height:100%;
+
+}
+
+#aboutus{
+
+  background-color: #228B22;
+
+}
+
+#products{
+
+  background-color: #FF1493;
+
+}
+</style>
+
+
 </head>
+
+ 
 
 <body>
 
-  <img id="train" src="https://js.cx/clipart/train.gif">
+<div class="nav1" style= 'position:fixed;'>
+
+    
+
+        <li class="li-aboutus"><a href ="#aboutus"> about us </a></li>
+
+        <li class="li-products"><a href="#products">products</a></li>
+
+    </ul>
+
+</div>
+
+ 
+
+<div id="aboutus" style="height: 150%;">First</div>
+
+<div id='products' style="height: 50%;">Second</div>
 
 
-  <script>
-    train.onclick = function() {
-      animate(function(timePassed) {
-        train.style.left = timePassed / 5 + 'px';
-      }, 4000);
-    };
-
-    // Рисует функция draw
-    // Продолжительность анимации duration
-    function animate(draw, duration) {
-      var start = performance.now();
-
-      requestAnimationFrame(function animate(time) {
-        // определить, сколько прошло времени с начала анимации
-        var timePassed = time - start;
-
-        console.log(time, start)
-          // возможно небольшое превышение времени, в этом случае зафиксировать конец
-        if (timePassed > duration) timePassed = duration;
-
-        // нарисовать состояние анимации в момент timePassed
-        draw(timePassed);
-
-        // если время анимации не закончилось - запланировать ещё кадр
-        if (timePassed < duration) {
-          requestAnimationFrame(animate);
-        }
-
-      });
-    }
-  </script>
-
+<script src="script.js"></script>
+</body>
+</html>
 
 </body>
-
 </html>
