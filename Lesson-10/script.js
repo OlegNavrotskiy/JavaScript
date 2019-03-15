@@ -11,7 +11,7 @@ class Options {
 	addDiv() {
     let block = document.createElement('div');
     document.body.appendChild(block);
-		block.textContent = 'Какой-то текст';
+		block.textContent = text;
 		block.style.cssText = ` height:${this.height}px;
 			width:${this.width}px;
 			background-color:${this.bg};
@@ -20,6 +20,7 @@ class Options {
 	}
 }
 
-let element = new Options(150, 800, 'green', 20, 'center');
+let element = new Options(150, 800, 'green', 20, 'center'),
+		text = prompt("Введите нужный текст");
 element.addDiv();
 
