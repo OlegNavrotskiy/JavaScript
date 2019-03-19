@@ -6,12 +6,7 @@ let img = document.querySelectorAll('img'),
   card = document.querySelectorAll('.card'),
   countryCheck = document.querySelectorAll('input'),
   btn = document.querySelector('button');
-  products = document.querySelector('.products');
-  gerCheck = document.querySelector('#gerCheck'),
-  freCheck = document.querySelector('#freCheck'),
-  itaCheck = document.querySelector('#itaCheck'),
   category = document.querySelectorAll('.card-category');
-  
 
 
 function priceJson() {
@@ -20,15 +15,11 @@ function priceJson() {
   request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
   request.send();
 
-  
-  
   request.onreadystatechange = function() {
       function promiseNew() {
-          return new Promise(function(resolve,reject) {
+          return new Promise(function(resolve) {
               if (request.readyState === 4 && request.status == 200) {
                       resolve();
-              } else {
-                  reject();             
               }
           });
       }
@@ -83,7 +74,6 @@ function priceJson() {
            allCars()
 
           })
-          .catch()
   };
 }
 priceJson();
