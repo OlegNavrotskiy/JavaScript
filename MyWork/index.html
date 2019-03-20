@@ -10,17 +10,21 @@
 <body>
 
 <div class="container">
-  <div class="header"></div>
   <div class="main-block">
     <div class="filter">
       <div class="filter-text">
         Выберите страну:
       </div>
       <div class="filter-box">
-        <input type="radio" name="country"> Германия
-        <input type="radio" name="country"> Франция
-        <input type="radio" name="country"> Италия
-      <button>Применить</button>
+        <ul>
+          <li><input type="radio" name="country" id="germany"> Германия</li>
+          <li><input type="radio" name="country" id="france"> Франция</li>
+          <li><input type="radio" name="country" id="italian"> Италия</li>
+        </ul>
+        <div class="btn-block">
+            <button class="btnAll">Все страны</button>
+            <button class="btnCountry">Применить</button>
+        </div>
       </div>
     </div>
     <div class="products">
@@ -53,6 +57,16 @@
         <div class="card-price"></div>
         <div class="card-category"></div>
       </div>
+      
+      <div class="card">
+          <div class="card-img">
+            <img src="">
+          </div>
+          <div class="card-name"></div>
+          <div class="card-desk"></div>
+          <div class="card-price"></div>
+          <div class="card-category"></div>
+        </div>
     
       <div class="card">
         <div class="card-img">

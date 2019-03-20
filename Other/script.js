@@ -1,12 +1,11 @@
-'use strict';
-
-
-let trans = ([[1,2,3],["a","b","c"]]);
-
-function transpose(array) {
-  return array.reduce((prev, next) => next.map((item, i) =>
-      (prev[i] || []).concat(next[i])
-  ), []);
+function animateSlider() {
+  let op = 0;
+  while (op <= 1) {
+      (function(ar) {
+          setTimeout(function() {
+            slides[slideIndex - 1].children[0].style.opacity = ar;
+          }, 60 + op * 600);
+      }) (op);
+      op += 0.1;
+  }
 }
-console.log(...trans);
-console.log(...transpose(trans));
