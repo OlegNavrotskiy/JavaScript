@@ -1,7 +1,7 @@
 describe("Функции", function() {
 
   it("Возвращает ли функция true?", function() {
-    assert.typeOf(sum(2,2), 'true');
+    assert.equal(sum(8,5), true);
   });
   
   it("Проверить на соответствие", function() {
