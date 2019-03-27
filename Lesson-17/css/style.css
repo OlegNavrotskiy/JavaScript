@@ -1,0 +1,1161 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 30px;
+	font: 13px/1.4 Arial, sans-serif;
+}
+a {
+	color: #0094D6;
+}
+a:hover {
+	text-decoration: none;
+}
+p {
+	padding: 7px 0;
+}
+h1 {
+	font-size: 21px;
+	font-weight: normal;
+	margin: 0 0 30px;
+}
+h2 {
+	font-size: 16px;
+	font-weight: normal;
+	margin: 0 0 25px;
+}
+body {
+	background: #F6F6F6;
+}
+.text {
+	max-width: 700px;
+	margin: 0 0 30px;
+	background: #FFF;
+	border: 2px solid #7DCA86;
+	border-radius: 5px;
+	padding: 7px 15px;
+	box-sizing: border-box;
+}
+
+.tabs {
+	width: 100%;
+	height: 100%;
+	margin: 0 0 30px;
+}
+.tabs__caption {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	list-style: none;
+	position: relative;
+	margin: -1px 0 0 -1px;
+}
+.tabs__caption li:last-child:before {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	right: -2px;
+	z-index: -1;
+	height: 5px;
+	background: #7DCA86;
+}
+.tabs__caption:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.tabs__caption li {
+	padding: 9px 15px;
+	margin: 1px 0 0 1px;
+	background: #61AF6A;
+	color: #FFF;
+	position: relative;
+	border: solid #61AF6A;
+	border-width: 2px 2px 0;
+	border-radius: 5px 5px 0 0;
+	text-align: center;
+}
+.tabs__caption li:not(.active) {
+	cursor: pointer;
+}
+.tabs__caption li:not(.active):hover {
+	background: #7DCA86;
+	border-color: #7DCA86;
+}
+.tabs__caption .active {
+	background: #FFF;
+	color: #000;
+	border-color: #7DCA86;
+}
+.tabs__caption .active:after {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	right: 0;
+	height: 5px;
+	background: #FFF;
+}
+.tabs__content {
+	display: none;
+	background: #FFF;
+	border: 2px solid #7DCA86;
+	border-radius: 0 5px 5px 5px;
+	padding: 7px 15px;
+	height: 80vh;
+}
+.tabs__content.active {
+	display: block;
+}
+.fotorama__wrap {
+	margin: 0 auto;
+}
+
+
+.board {
+  height: 242px;
+  margin: 88px auto;
+  position: relative;
+  width: 242px;
+}
+
+h1 {
+  color: #3dc5e0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  margin: 20px 0 -50px;
+  text-align: center;
+}
+h1 span:nth-of-type(1),
+h1 span:nth-of-type(3) {
+  color: #e36b0d;
+}
+
+.boxes {
+  border: 1px solid #666666;
+  display: flex;
+  flex-wrap: wrap;
+  height: 242px;
+  position: relative;
+  width: 242px;
+}
+
+/**
+ * Boxes
+ */
+input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  opacity: 0.01;
+  position: absolute;
+  z-index: 0;
+}
+input[type=checkbox].x:checked {
+  counter-increment: turn -10;
+}
+input[type=checkbox].o:checked {
+  counter-increment: turn 10;
+}
+
+@-moz-document url-prefix() {
+  input[type=checkbox]:checked {
+    background: none;
+  }
+}
+input[type='submit'] {
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  height: auto;
+  padding: 8px 10px;
+  position: static;
+  width: auto;
+}
+
+label {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 1px #666666;
+  cursor: pointer;
+  height: 80px;
+  transition: background .2s;
+  width: 80px;
+}
+label:hover {
+  background-color: #facca9;
+}
+label.o:hover {
+  background-color: #d7f3f9;
+}
+
+/**
+ * Checked Boxes
+ */
+input[type=checkbox]:nth-of-type(1):checked ~ .controls .control.-x label:nth-of-type(1),
+input[type=checkbox]:nth-of-type(1):checked ~ .controls .control.-o label:nth-of-type(1) {
+  background-color: #F38630;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-x.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(2):checked ~ .controls .control.-x label:nth-of-type(2),
+input[type=checkbox]:nth-of-type(2):checked ~ .controls .control.-o label:nth-of-type(2) {
+  background-color: #F38630;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-x.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(3):checked ~ .controls .control.-x label:nth-of-type(3),
+input[type=checkbox]:nth-of-type(3):checked ~ .controls .control.-o label:nth-of-type(3) {
+  background-color: #F38630;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-x.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(4):checked ~ .controls .control.-x label:nth-of-type(4),
+input[type=checkbox]:nth-of-type(4):checked ~ .controls .control.-o label:nth-of-type(4) {
+  background-color: #F38630;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-x.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(5):checked ~ .controls .control.-x label:nth-of-type(5),
+input[type=checkbox]:nth-of-type(5):checked ~ .controls .control.-o label:nth-of-type(5) {
+  background-color: #F38630;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-x.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(6):checked ~ .controls .control.-x label:nth-of-type(6),
+input[type=checkbox]:nth-of-type(6):checked ~ .controls .control.-o label:nth-of-type(6) {
+  background-color: #F38630;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-x.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(7):checked ~ .controls .control.-x label:nth-of-type(7),
+input[type=checkbox]:nth-of-type(7):checked ~ .controls .control.-o label:nth-of-type(7) {
+  background-color: #F38630;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-x.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(8):checked ~ .controls .control.-x label:nth-of-type(8),
+input[type=checkbox]:nth-of-type(8):checked ~ .controls .control.-o label:nth-of-type(8) {
+  background-color: #F38630;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-x.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(9):checked ~ .controls .control.-x label:nth-of-type(9),
+input[type=checkbox]:nth-of-type(9):checked ~ .controls .control.-o label:nth-of-type(9) {
+  background-color: #F38630;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-x.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(10):checked ~ .controls .control.-x label:nth-of-type(1),
+input[type=checkbox]:nth-of-type(10):checked ~ .controls .control.-o label:nth-of-type(1) {
+  background-color: #69D2E7;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-o.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(11):checked ~ .controls .control.-x label:nth-of-type(2),
+input[type=checkbox]:nth-of-type(11):checked ~ .controls .control.-o label:nth-of-type(2) {
+  background-color: #69D2E7;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-o.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(12):checked ~ .controls .control.-x label:nth-of-type(3),
+input[type=checkbox]:nth-of-type(12):checked ~ .controls .control.-o label:nth-of-type(3) {
+  background-color: #69D2E7;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-o.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(13):checked ~ .controls .control.-x label:nth-of-type(4),
+input[type=checkbox]:nth-of-type(13):checked ~ .controls .control.-o label:nth-of-type(4) {
+  background-color: #69D2E7;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-o.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(14):checked ~ .controls .control.-x label:nth-of-type(5),
+input[type=checkbox]:nth-of-type(14):checked ~ .controls .control.-o label:nth-of-type(5) {
+  background-color: #69D2E7;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-o.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(15):checked ~ .controls .control.-x label:nth-of-type(6),
+input[type=checkbox]:nth-of-type(15):checked ~ .controls .control.-o label:nth-of-type(6) {
+  background-color: #69D2E7;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-o.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(16):checked ~ .controls .control.-x label:nth-of-type(7),
+input[type=checkbox]:nth-of-type(16):checked ~ .controls .control.-o label:nth-of-type(7) {
+  background-color: #69D2E7;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-o.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(17):checked ~ .controls .control.-x label:nth-of-type(8),
+input[type=checkbox]:nth-of-type(17):checked ~ .controls .control.-o label:nth-of-type(8) {
+  background-color: #69D2E7;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-o.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+input[type=checkbox]:nth-of-type(18):checked ~ .controls .control.-x label:nth-of-type(9),
+input[type=checkbox]:nth-of-type(18):checked ~ .controls .control.-o label:nth-of-type(9) {
+  background-color: #69D2E7;
+  background-image: url(http://www.jerrylow.com/demo/ttt/ttt-o.svg);
+  background-size: 50%;
+  cursor: not-allowed;
+  pointer-events: none;
+  z-index: 50 !important;
+}
+
+/**
+ * Turns
+ **/
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: calc(100% + 2ch);
+  z-index: 1;
+}
+
+.control.-x {
+  overflow: hidden;
+  flex-grow: 1;
+  height: 100%;
+  width: 0;
+}
+.control.-o {
+  flex-basis: 100%;
+  white-space: nowrap;
+}
+.control.-o:after {
+  content: counter(turn);
+  display: inline;
+  visibility: hidden;
+}
+.control.-o .control-labels {
+  width: 240px;
+}
+.control .control-labels {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.turn {
+  bottom: -11px;
+  display: flex;
+  flex-wrap: wrap;
+  left: -11px;
+  overflow: hidden;
+  position: absolute;
+  right: -11px;
+  top: -11px;
+  z-index: 0;
+}
+.turn .turn-x {
+  box-shadow: inset 0 0 0 10px #facca9;
+  flex-grow: 1;
+  height: 100%;
+  width: 0;
+}
+.turn .turn-o {
+  box-shadow: inset 0 0 0 10px #d7f3f9;
+  color: #d7f3f9;
+  flex-basis: 100%;
+  box-sizing: border-box;
+  padding-left: calc(100% - 1ch);
+}
+.turn .turn-o:before {
+  content: counter(turn);
+}
+
+/**
+ * Done
+ **/
+/**
+ * ---
+ **/
+input[type=checkbox]:nth-of-type(1):checked + :checked + :checked ~ .done {
+  box-shadow: 0 0 0 10px #facca9;
+  border: 1px solid #666666;
+  background: rgba(243, 134, 48, 0.95);
+  color: #9b4909;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(1):checked + :checked + :checked ~ .done .winner:after {
+  content: "x";
+  color: #6a3206;
+}
+input[type=checkbox]:nth-of-type(1):checked + :checked + :checked ~ .done input[type='submit'] {
+  background: #cb600c;
+}
+input[type=checkbox]:nth-of-type(1):checked + :checked + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(1):checked + :checked + :checked ~ .turn {
+  display: none !important;
+}
+input[type=checkbox]:nth-of-type(1) + input + input + :checked + :checked + :checked ~ .done {
+  box-shadow: 0 0 0 10px #facca9;
+  border: 1px solid #666666;
+  background: rgba(243, 134, 48, 0.95);
+  color: #9b4909;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(1) + input + input + :checked + :checked + :checked ~ .done .winner:after {
+  content: "x";
+  color: #6a3206;
+}
+input[type=checkbox]:nth-of-type(1) + input + input + :checked + :checked + :checked ~ .done input[type='submit'] {
+  background: #cb600c;
+}
+input[type=checkbox]:nth-of-type(1) + input + input + :checked + :checked + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(1) + input + input + :checked + :checked + :checked ~ .turn {
+  display: none !important;
+}
+input[type=checkbox]:nth-of-type(1) + input + input + input + input + input + :checked + :checked + :checked ~ .done {
+  box-shadow: 0 0 0 10px #facca9;
+  border: 1px solid #666666;
+  background: rgba(243, 134, 48, 0.95);
+  color: #9b4909;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(1) + input + input + input + input + input + :checked + :checked + :checked ~ .done .winner:after {
+  content: "x";
+  color: #6a3206;
+}
+input[type=checkbox]:nth-of-type(1) + input + input + input + input + input + :checked + :checked + :checked ~ .done input[type='submit'] {
+  background: #cb600c;
+}
+input[type=checkbox]:nth-of-type(1) + input + input + input + input + input + :checked + :checked + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(1) + input + input + input + input + input + :checked + :checked + :checked ~ .turn {
+  display: none !important;
+}
+
+/**
+ * |||
+ */
+input[type=checkbox]:nth-of-type(1):checked + input + input + :checked + input + input + :checked ~ .done {
+  box-shadow: 0 0 0 10px #facca9;
+  border: 1px solid #666666;
+  background: rgba(243, 134, 48, 0.95);
+  color: #9b4909;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(1):checked + input + input + :checked + input + input + :checked ~ .done .winner:after {
+  content: "x";
+  color: #6a3206;
+}
+input[type=checkbox]:nth-of-type(1):checked + input + input + :checked + input + input + :checked ~ .done input[type='submit'] {
+  background: #cb600c;
+}
+input[type=checkbox]:nth-of-type(1):checked + input + input + :checked + input + input + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(1):checked + input + input + :checked + input + input + :checked ~ .turn {
+  display: none !important;
+}
+input[type=checkbox]:nth-of-type(1) + :checked + input + input + :checked + input + input + :checked ~ .done {
+  box-shadow: 0 0 0 10px #facca9;
+  border: 1px solid #666666;
+  background: rgba(243, 134, 48, 0.95);
+  color: #9b4909;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(1) + :checked + input + input + :checked + input + input + :checked ~ .done .winner:after {
+  content: "x";
+  color: #6a3206;
+}
+input[type=checkbox]:nth-of-type(1) + :checked + input + input + :checked + input + input + :checked ~ .done input[type='submit'] {
+  background: #cb600c;
+}
+input[type=checkbox]:nth-of-type(1) + :checked + input + input + :checked + input + input + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(1) + :checked + input + input + :checked + input + input + :checked ~ .turn {
+  display: none !important;
+}
+input[type=checkbox]:nth-of-type(1) + input + :checked + input + input + :checked + input + input + :checked ~ .done {
+  box-shadow: 0 0 0 10px #facca9;
+  border: 1px solid #666666;
+  background: rgba(243, 134, 48, 0.95);
+  color: #9b4909;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(1) + input + :checked + input + input + :checked + input + input + :checked ~ .done .winner:after {
+  content: "x";
+  color: #6a3206;
+}
+input[type=checkbox]:nth-of-type(1) + input + :checked + input + input + :checked + input + input + :checked ~ .done input[type='submit'] {
+  background: #cb600c;
+}
+input[type=checkbox]:nth-of-type(1) + input + :checked + input + input + :checked + input + input + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(1) + input + :checked + input + input + :checked + input + input + :checked ~ .turn {
+  display: none !important;
+}
+
+/**
+ * X
+ **/
+input[type=checkbox]:nth-of-type(1):checked + input + input + input + :checked + input + input + input + :checked ~ .done {
+  box-shadow: 0 0 0 10px #facca9;
+  border: 1px solid #666666;
+  background: rgba(243, 134, 48, 0.95);
+  color: #9b4909;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(1):checked + input + input + input + :checked + input + input + input + :checked ~ .done .winner:after {
+  content: "x";
+  color: #6a3206;
+}
+input[type=checkbox]:nth-of-type(1):checked + input + input + input + :checked + input + input + input + :checked ~ .done input[type='submit'] {
+  background: #cb600c;
+}
+input[type=checkbox]:nth-of-type(1):checked + input + input + input + :checked + input + input + input + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(1):checked + input + input + input + :checked + input + input + input + :checked ~ .turn {
+  display: none !important;
+}
+input[type=checkbox]:nth-of-type(1) + input + :checked + input + :checked + input + :checked ~ .done {
+  box-shadow: 0 0 0 10px #facca9;
+  border: 1px solid #666666;
+  background: rgba(243, 134, 48, 0.95);
+  color: #9b4909;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(1) + input + :checked + input + :checked + input + :checked ~ .done .winner:after {
+  content: "x";
+  color: #6a3206;
+}
+input[type=checkbox]:nth-of-type(1) + input + :checked + input + :checked + input + :checked ~ .done input[type='submit'] {
+  background: #cb600c;
+}
+input[type=checkbox]:nth-of-type(1) + input + :checked + input + :checked + input + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(1) + input + :checked + input + :checked + input + :checked ~ .turn {
+  display: none !important;
+}
+
+/**
+ * ---
+ **/
+input[type=checkbox]:nth-of-type(10):checked + :checked + :checked ~ .done {
+  box-shadow: 0 0 0 10px #d7f3f9;
+  border: 1px solid #666666;
+  background: rgba(105, 210, 231, 0.95);
+  color: #1d9bb4;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(10):checked + :checked + :checked ~ .done .winner:after {
+  content: "o";
+  color: #167588;
+}
+input[type=checkbox]:nth-of-type(10):checked + :checked + :checked ~ .done input[type='submit'] {
+  background: #27bedc;
+}
+input[type=checkbox]:nth-of-type(10):checked + :checked + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(10):checked + :checked + :checked ~ .turn {
+  display: none !important;
+}
+input[type=checkbox]:nth-of-type(10) + input + input + :checked + :checked + :checked ~ .done {
+  box-shadow: 0 0 0 10px #d7f3f9;
+  border: 1px solid #666666;
+  background: rgba(105, 210, 231, 0.95);
+  color: #1d9bb4;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(10) + input + input + :checked + :checked + :checked ~ .done .winner:after {
+  content: "o";
+  color: #167588;
+}
+input[type=checkbox]:nth-of-type(10) + input + input + :checked + :checked + :checked ~ .done input[type='submit'] {
+  background: #27bedc;
+}
+input[type=checkbox]:nth-of-type(10) + input + input + :checked + :checked + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(10) + input + input + :checked + :checked + :checked ~ .turn {
+  display: none !important;
+}
+input[type=checkbox]:nth-of-type(10) + input + input + input + input + input + :checked + :checked + :checked ~ .done {
+  box-shadow: 0 0 0 10px #d7f3f9;
+  border: 1px solid #666666;
+  background: rgba(105, 210, 231, 0.95);
+  color: #1d9bb4;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(10) + input + input + input + input + input + :checked + :checked + :checked ~ .done .winner:after {
+  content: "o";
+  color: #167588;
+}
+input[type=checkbox]:nth-of-type(10) + input + input + input + input + input + :checked + :checked + :checked ~ .done input[type='submit'] {
+  background: #27bedc;
+}
+input[type=checkbox]:nth-of-type(10) + input + input + input + input + input + :checked + :checked + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(10) + input + input + input + input + input + :checked + :checked + :checked ~ .turn {
+  display: none !important;
+}
+
+/**
+ * |||
+ */
+input[type=checkbox]:nth-of-type(10):checked + input + input + :checked + input + input + :checked ~ .done {
+  box-shadow: 0 0 0 10px #d7f3f9;
+  border: 1px solid #666666;
+  background: rgba(105, 210, 231, 0.95);
+  color: #1d9bb4;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(10):checked + input + input + :checked + input + input + :checked ~ .done .winner:after {
+  content: "o";
+  color: #167588;
+}
+input[type=checkbox]:nth-of-type(10):checked + input + input + :checked + input + input + :checked ~ .done input[type='submit'] {
+  background: #27bedc;
+}
+input[type=checkbox]:nth-of-type(10):checked + input + input + :checked + input + input + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(10):checked + input + input + :checked + input + input + :checked ~ .turn {
+  display: none !important;
+}
+input[type=checkbox]:nth-of-type(10) + :checked + input + input + :checked + input + input + :checked ~ .done {
+  box-shadow: 0 0 0 10px #d7f3f9;
+  border: 1px solid #666666;
+  background: rgba(105, 210, 231, 0.95);
+  color: #1d9bb4;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(10) + :checked + input + input + :checked + input + input + :checked ~ .done .winner:after {
+  content: "o";
+  color: #167588;
+}
+input[type=checkbox]:nth-of-type(10) + :checked + input + input + :checked + input + input + :checked ~ .done input[type='submit'] {
+  background: #27bedc;
+}
+input[type=checkbox]:nth-of-type(10) + :checked + input + input + :checked + input + input + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(10) + :checked + input + input + :checked + input + input + :checked ~ .turn {
+  display: none !important;
+}
+input[type=checkbox]:nth-of-type(10) + input + :checked + input + input + :checked + input + input + :checked ~ .done {
+  box-shadow: 0 0 0 10px #d7f3f9;
+  border: 1px solid #666666;
+  background: rgba(105, 210, 231, 0.95);
+  color: #1d9bb4;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(10) + input + :checked + input + input + :checked + input + input + :checked ~ .done .winner:after {
+  content: "o";
+  color: #167588;
+}
+input[type=checkbox]:nth-of-type(10) + input + :checked + input + input + :checked + input + input + :checked ~ .done input[type='submit'] {
+  background: #27bedc;
+}
+input[type=checkbox]:nth-of-type(10) + input + :checked + input + input + :checked + input + input + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(10) + input + :checked + input + input + :checked + input + input + :checked ~ .turn {
+  display: none !important;
+}
+
+/**
+ * X
+ **/
+input[type=checkbox]:nth-of-type(10):checked + input + input + input + :checked + input + input + input + :checked ~ .done {
+  box-shadow: 0 0 0 10px #d7f3f9;
+  border: 1px solid #666666;
+  background: rgba(105, 210, 231, 0.95);
+  color: #1d9bb4;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(10):checked + input + input + input + :checked + input + input + input + :checked ~ .done .winner:after {
+  content: "o";
+  color: #167588;
+}
+input[type=checkbox]:nth-of-type(10):checked + input + input + input + :checked + input + input + input + :checked ~ .done input[type='submit'] {
+  background: #27bedc;
+}
+input[type=checkbox]:nth-of-type(10):checked + input + input + input + :checked + input + input + input + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(10):checked + input + input + input + :checked + input + input + input + :checked ~ .turn {
+  display: none !important;
+}
+input[type=checkbox]:nth-of-type(10) + input + :checked + input + :checked + input + :checked ~ .done {
+  box-shadow: 0 0 0 10px #d7f3f9;
+  border: 1px solid #666666;
+  background: rgba(105, 210, 231, 0.95);
+  color: #1d9bb4;
+  display: flex;
+}
+input[type=checkbox]:nth-of-type(10) + input + :checked + input + :checked + input + :checked ~ .done .winner:after {
+  content: "o";
+  color: #167588;
+}
+input[type=checkbox]:nth-of-type(10) + input + :checked + input + :checked + input + :checked ~ .done input[type='submit'] {
+  background: #27bedc;
+}
+input[type=checkbox]:nth-of-type(10) + input + :checked + input + :checked + input + :checked ~ .tie,
+input[type=checkbox]:nth-of-type(10) + input + :checked + input + :checked + input + :checked ~ .turn {
+  display: none !important;
+}
+
+.done {
+  align-items: center;
+  bottom: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+.done .lead {
+  font-size: 16px;
+}
+.done .winner {
+  font-size: 100px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/**
+ * Tie
+ */
+.tie {
+  align-items: center;
+  background: linear-gradient(45deg, #F38630 0%, #F38630 50%, #69D2E7 50.1%);
+  bottom: 0;
+  color: white;
+  display: none;
+  flex-direction: column;
+  font-size: 30px;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 50;
+}
+.tie input[type='submit'] {
+  background: #333;
+  margin: 15px 0 0;
+}
+
+/**
+ * Tie
+ **/
+input[type=checkbox]:checked ~ input[type=checkbox]:checked ~ input[type=checkbox]:checked ~ input[type=checkbox]:checked ~ input[type=checkbox]:checked ~ input[type=checkbox]:checked ~ input[type=checkbox]:checked ~ input[type=checkbox]:checked ~ input[type=checkbox]:checked ~ .tie {
+  display: flex;
+}
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(110deg, #D2D2D2, #F5F5F5);
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+.clock {
+  width: 360px;
+  height: 360px;
+  padding: 25px;
+  margin: auto;
+  background-color: #F7F7F7;
+  border-radius: 80px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+.clock .inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: 5px solid #181818;
+  border-radius: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.75) inset;
+}
+.clock .inner .hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7.2px;
+  background-color: #181818;
+}
+.clock .inner .hand.hour {
+  height: 90px;
+  margin-top: -27.2727272727px;
+  -webkit-transform: rotate(0deg) translate(-50%, -50%);
+          transform: rotate(0deg) translate(-50%, -50%);
+  -webkit-transform-origin: 0 27.2727272727px;
+          transform-origin: 0 27.2727272727px;
+}
+.clock .inner .hand.minute {
+  height: 120px;
+  margin-top: -27.2727272727px;
+  -webkit-transform: rotate(0deg) translate(-50%, -50%);
+          transform: rotate(0deg) translate(-50%, -50%);
+  -webkit-transform-origin: 0 27.2727272727px;
+          transform-origin: 0 27.2727272727px;
+}
+.clock .inner .hand.second {
+  width: 1.9459459459px;
+  height: 120px;
+  background-color: #ec231e;
+  margin-top: -36px;
+  box-shadow: -4px -6px 0 0 rgba(0, 0, 0, 0.15);
+  -webkit-transform: rotate(0deg) translate(-50%, -50%);
+          transform: rotate(0deg) translate(-50%, -50%);
+  -webkit-transform-origin: 0 36px;
+          transform-origin: 0 36px;
+}
+.clock .inner .hand.second:before, .clock .inner .hand.second:after {
+  content: "";
+  display: inherit;
+  position: inherit;
+  left: inherit;
+  background-color: inherit;
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.clock .inner .hand.second:before {
+  top: 94.7368421053px;
+  width: 18px;
+  height: 18px;
+  box-shadow: -2px -2px 2px 0 rgba(0, 0, 0, 0.15);
+}
+.clock .inner .hand.second:after {
+  top: 20px;
+  width: 10px;
+  height: 10px;
+  box-shadow: -4px -6px 2px 0 rgba(0, 0, 0, 0.15);
+}
+.clock .inner .graduations .graduation {
+  display: block;
+  position: absolute;
+  top: 7.5px;
+  left: 50%;
+  width: 1.9459459459px;
+  height: 9px;
+  background-color: #181818;
+  -webkit-transform: rotate(0deg) translateX(-50%);
+          transform: rotate(0deg) translateX(-50%);
+  -webkit-transform-origin: 0 140px;
+          transform-origin: 0 140px;
+}
+.clock .inner .graduations .graduation:nth-child(5n-4) {
+  width: 4px;
+  height: 20px;
+}
+.clock .inner .graduations .graduation:nth-child(1) {
+  -webkit-transform: rotate(1deg) translateX(-50%);
+          transform: rotate(1deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(2) {
+  -webkit-transform: rotate(7deg) translateX(-50%);
+          transform: rotate(7deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(3) {
+  -webkit-transform: rotate(13deg) translateX(-50%);
+          transform: rotate(13deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(4) {
+  -webkit-transform: rotate(19deg) translateX(-50%);
+          transform: rotate(19deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(5) {
+  -webkit-transform: rotate(25deg) translateX(-50%);
+          transform: rotate(25deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(6) {
+  -webkit-transform: rotate(31deg) translateX(-50%);
+          transform: rotate(31deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(7) {
+  -webkit-transform: rotate(37deg) translateX(-50%);
+          transform: rotate(37deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(8) {
+  -webkit-transform: rotate(43deg) translateX(-50%);
+          transform: rotate(43deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(9) {
+  -webkit-transform: rotate(49deg) translateX(-50%);
+          transform: rotate(49deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(10) {
+  -webkit-transform: rotate(55deg) translateX(-50%);
+          transform: rotate(55deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(11) {
+  -webkit-transform: rotate(61deg) translateX(-50%);
+          transform: rotate(61deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(12) {
+  -webkit-transform: rotate(67deg) translateX(-50%);
+          transform: rotate(67deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(13) {
+  -webkit-transform: rotate(73deg) translateX(-50%);
+          transform: rotate(73deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(14) {
+  -webkit-transform: rotate(79deg) translateX(-50%);
+          transform: rotate(79deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(15) {
+  -webkit-transform: rotate(85deg) translateX(-50%);
+          transform: rotate(85deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(16) {
+  -webkit-transform: rotate(91deg) translateX(-50%);
+          transform: rotate(91deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(17) {
+  -webkit-transform: rotate(97deg) translateX(-50%);
+          transform: rotate(97deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(18) {
+  -webkit-transform: rotate(103deg) translateX(-50%);
+          transform: rotate(103deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(19) {
+  -webkit-transform: rotate(109deg) translateX(-50%);
+          transform: rotate(109deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(20) {
+  -webkit-transform: rotate(115deg) translateX(-50%);
+          transform: rotate(115deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(21) {
+  -webkit-transform: rotate(121deg) translateX(-50%);
+          transform: rotate(121deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(22) {
+  -webkit-transform: rotate(127deg) translateX(-50%);
+          transform: rotate(127deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(23) {
+  -webkit-transform: rotate(133deg) translateX(-50%);
+          transform: rotate(133deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(24) {
+  -webkit-transform: rotate(139deg) translateX(-50%);
+          transform: rotate(139deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(25) {
+  -webkit-transform: rotate(145deg) translateX(-50%);
+          transform: rotate(145deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(26) {
+  -webkit-transform: rotate(151deg) translateX(-50%);
+          transform: rotate(151deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(27) {
+  -webkit-transform: rotate(157deg) translateX(-50%);
+          transform: rotate(157deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(28) {
+  -webkit-transform: rotate(163deg) translateX(-50%);
+          transform: rotate(163deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(29) {
+  -webkit-transform: rotate(169deg) translateX(-50%);
+          transform: rotate(169deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(30) {
+  -webkit-transform: rotate(175deg) translateX(-50%);
+          transform: rotate(175deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(31) {
+  -webkit-transform: rotate(181deg) translateX(-50%);
+          transform: rotate(181deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(32) {
+  -webkit-transform: rotate(187deg) translateX(-50%);
+          transform: rotate(187deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(33) {
+  -webkit-transform: rotate(193deg) translateX(-50%);
+          transform: rotate(193deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(34) {
+  -webkit-transform: rotate(199deg) translateX(-50%);
+          transform: rotate(199deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(35) {
+  -webkit-transform: rotate(205deg) translateX(-50%);
+          transform: rotate(205deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(36) {
+  -webkit-transform: rotate(211deg) translateX(-50%);
+          transform: rotate(211deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(37) {
+  -webkit-transform: rotate(217deg) translateX(-50%);
+          transform: rotate(217deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(38) {
+  -webkit-transform: rotate(223deg) translateX(-50%);
+          transform: rotate(223deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(39) {
+  -webkit-transform: rotate(229deg) translateX(-50%);
+          transform: rotate(229deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(40) {
+  -webkit-transform: rotate(235deg) translateX(-50%);
+          transform: rotate(235deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(41) {
+  -webkit-transform: rotate(241deg) translateX(-50%);
+          transform: rotate(241deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(42) {
+  -webkit-transform: rotate(247deg) translateX(-50%);
+          transform: rotate(247deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(43) {
+  -webkit-transform: rotate(253deg) translateX(-50%);
+          transform: rotate(253deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(44) {
+  -webkit-transform: rotate(259deg) translateX(-50%);
+          transform: rotate(259deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(45) {
+  -webkit-transform: rotate(265deg) translateX(-50%);
+          transform: rotate(265deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(46) {
+  -webkit-transform: rotate(271deg) translateX(-50%);
+          transform: rotate(271deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(47) {
+  -webkit-transform: rotate(277deg) translateX(-50%);
+          transform: rotate(277deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(48) {
+  -webkit-transform: rotate(283deg) translateX(-50%);
+          transform: rotate(283deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(49) {
+  -webkit-transform: rotate(289deg) translateX(-50%);
+          transform: rotate(289deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(50) {
+  -webkit-transform: rotate(295deg) translateX(-50%);
+          transform: rotate(295deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(51) {
+  -webkit-transform: rotate(301deg) translateX(-50%);
+          transform: rotate(301deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(52) {
+  -webkit-transform: rotate(307deg) translateX(-50%);
+          transform: rotate(307deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(53) {
+  -webkit-transform: rotate(313deg) translateX(-50%);
+          transform: rotate(313deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(54) {
+  -webkit-transform: rotate(319deg) translateX(-50%);
+          transform: rotate(319deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(55) {
+  -webkit-transform: rotate(325deg) translateX(-50%);
+          transform: rotate(325deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(56) {
+  -webkit-transform: rotate(331deg) translateX(-50%);
+          transform: rotate(331deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(57) {
+  -webkit-transform: rotate(337deg) translateX(-50%);
+          transform: rotate(337deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(58) {
+  -webkit-transform: rotate(343deg) translateX(-50%);
+          transform: rotate(343deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(59) {
+  -webkit-transform: rotate(349deg) translateX(-50%);
+          transform: rotate(349deg) translateX(-50%);
+}
+.clock .inner .graduations .graduation:nth-child(60) {
+  -webkit-transform: rotate(355deg) translateX(-50%);
+          transform: rotate(355deg) translateX(-50%);
+}
